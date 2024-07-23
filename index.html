@@ -237,36 +237,5 @@ window.addEventListener('DOMContentLoaded', onLoad);
     </tr>
   </tbody>
 </table>
-
-
-
-
-<script>"use strict";
-// Copyright 2012 The Chromium Authors
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-var loadTimeData;class LoadTimeData{constructor(){this.data_=null}set data(value){expect(!this.data_,"Re-setting data.");this.data_=value}valueExists(id){return id in this.data_}getValue(id){expect(this.data_,"No data. Did you remember to include strings.js?");const value=this.data_[id];expect(typeof value!=="undefined","Could not find value for "+id);return value}getString(id){const value=this.getValue(id);expectIsType(id,value,"string");return value}getStringF(id,var_args){const value=this.getString(id);if(!value){return""}const args=Array.prototype.slice.call(arguments);args[0]=value;return this.substituteString.apply(this,args)}substituteString(label,var_args){const varArgs=arguments;return label.replace(/\$(.|$|\n)/g,(function(m){expect(m.match(/\$[$1-9]/),"Unescaped $ found in localized string.");return m==="$$"?"$":varArgs[m[1]]}))}getBoolean(id){const value=this.getValue(id);expectIsType(id,value,"boolean");return value}getInteger(id){const value=this.getValue(id);expectIsType(id,value,"number");expect(value===Math.floor(value),"Number isn't integer: "+value);return value}overrideValues(replacements){expect(typeof replacements==="object","Replacements must be a dictionary object.");for(const key in replacements){this.data_[key]=replacements[key]}}}function expect(condition,message){if(!condition){throw new Error("Unexpected condition on "+document.location.href+": "+message)}}function expectIsType(id,value,type){expect(typeof value===type,"["+value+"] ("+id+") is not a "+type)}expect(!loadTimeData,"should only include this file once");loadTimeData=new LoadTimeData;window.loadTimeData=loadTimeData;console.warn("crbug/1173575, non-JS module files deprecated.");</script><script>loadTimeData.data = {"header":"ดัชนีของ LOCATION","headerDateModified":"วันที่แก้ไข","headerName":"ชื่อ","headerSize":"ขนาด","language":"th","parentDirText":"[ไดเรกทอรีหลัก]","textdirection":"ltr"};</script><script>start("C:\\");</script>
-<script>addRow("$Recycle.Bin","$Recycle.Bin",1,0,"0 B",1710257386,"12/3/67 22:29:46");</script>
-<script>addRow("Documents and Settings","Documents%20and%20Settings",1,0,"0 B",1680893494,"8/4/66 01:51:34");</script>
-<script>addRow("OEM","OEM",1,0,"0 B",1680865625,"7/4/66 18:07:05");</script>
-<script>addRow("OneDriveTemp","OneDriveTemp",1,0,"0 B",1691923939,"13/8/66 17:52:19");</script>
-<script>addRow("PerfLogs","PerfLogs",1,0,"0 B",1651901090,"7/5/65 12:24:50");</script>
-<script>addRow("ProgramData","ProgramData",1,0,"0 B",1720863168,"13/7/67 16:32:48");</script>
-<script>addRow("Program Files","Program%20Files",1,0,"0 B",1719665424,"29/6/67 19:50:24");</script>
-<script>addRow("Program Files (x86)","Program%20Files%20(x86)",1,0,"0 B",1715954208,"17/5/67 20:56:48");</script>
-<script>addRow("Recovery","Recovery",1,0,"0 B",1715490825,"12/5/67 12:13:45");</script>
-<script>addRow("System Volume Information","System%20Volume%20Information",1,0,"0 B",1683335946,"6/5/66 08:19:06");</script>
-<script>addRow("tmp","tmp",1,0,"0 B",1711881585,"31/3/67 17:39:45");</script>
-<script>addRow("Users","Users",1,0,"0 B",1710257467,"12/3/67 22:31:07");</script>
-<script>addRow("WCH.CN","WCH.CN",1,0,"0 B",1696041168,"30/9/66 09:32:48");</script>
-<script>addRow("Windows","Windows",1,0,"0 B",1721704271,"23/7/67 10:11:11");</script>
-<script>addRow("xampp","xampp",1,0,"0 B",1696756131,"8/10/66 16:08:51");</script>
-<script>addRow("XboxGames","XboxGames",1,0,"0 B",1694757547,"15/9/66 12:59:07");</script>
-<script>addRow("DumpStack.log","DumpStack.log",0,12288,"12.0 kB",1690115168,"23/7/66 19:26:08");</script>
-<script>addRow("DumpStack.log.tmp","DumpStack.log.tmp",0,12288,"12.0 kB",1694913300,"17/9/66 08:15:00");</script>
-<script>addRow("FBE8C8D6A133","FBE8C8D6A133",0,40,"40 B",1681606221,"16/4/66 07:50:21");</script>
-<script>addRow(".GamingRoot",".GamingRoot",0,28,"28 B",1681461816,"14/4/66 15:43:36");</script>
-<script>addRow("hiberfil.sys","hiberfil.sys",0,3312025600,"3.1 GB",1721695951,"23/7/67 07:52:31");</script>
-<script>addRow("swapfile.sys","swapfile.sys",0,268435456,"256 MB",1720726466,"12/7/67 02:34:26");</script>
 </body>
 </html>
