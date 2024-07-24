@@ -1,7 +1,7 @@
         $(document).ready(function() {
             // โหลด credentials.json
             $.getJSON('credentials.json', function(credentials) {
-                $('#login_form').on('submit', function(event) {
+                $('#login-form').on('submit', function(event) {
                     event.preventDefault();
                     const username = $('#username').val();
                     const password = $('#password').val();
@@ -13,5 +13,7 @@
                         alert('รหัสไม่ถูกต้อง');
                     }
                 });
+            }).fail(function() {
+                alert('ไม่สามารถโหลดไฟล์ credentials.json ได้');
             });
         });
