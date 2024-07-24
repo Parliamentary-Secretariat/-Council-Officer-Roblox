@@ -1,23 +1,17 @@
-        async function fetchCredentials() {
-            const response = await fetch('credentials.json');
-            return response.json();
-        }
+        $(document).ready(function() {
+            // โหลด credentials.json
+            $.getJSON('credentials.json', function(credentials) {
+                $('#login_form').on('submit', function(event) {
+                    event.preventDefault();
+                    const username = $('#username').val();
+                    const password = $('#password').val();
 
-        async function handleLogin(event) {
-            event.preventDefault();
-
-            const usernameInput = document.getElementById('username').value;
-            const passwordInput = document.getElementById('password').value;
-
-            const credentials = await fetchCredentials();
-
-            if (usernameInput === credentials.username && passwordInput === credentials.password) {
-                window.location.href = 'home.html';
-            } else {
-                alert('Invalid username or password');
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('login_form').addEventListener('submit', handleLogin);
-        });  
+                    // ตรวจสอบ username และ password
+                    if (username === credentials.username && password === credentials.password) {
+                        window.location.href = 'home.html';
+                    } else {
+                        alert('รหัสไม่ถูกต้อง');
+                    }
+                });
+            });
+        });
