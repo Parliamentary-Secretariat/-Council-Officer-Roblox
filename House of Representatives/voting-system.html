@@ -126,14 +126,19 @@
         let time = h + ":" + m ;
         document.getElementById("time").innerHTML = time;
     </script>
+    
     <script>
-document.addEventListener('DOMContentLoaded',function(){
-  google.script.run.withSuccessHandler(data=>{
-    //console.log(data)
-    document.getElementById('np').innerHTML = data[0]
-
-  }).getData()
-})
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('https://script.google.com/macros/s/AKfycbwUiAMmNR1JEX3YiZYMjqYPVTQEjWPgQdVKYSEAXKADfJOXa_EaXKwgVnBWEKcTFIHYuA/exec?action=getUsers')
+                .then(response => response.json())
+                .then(data => {
+                    const result = data.find(item => item['ลำดับ'] === 'ผลรวม');
+                    if (result) {
+                        document.getElementById('np').value = result['การแสดงตน'];
+                    }
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        });
     </script>
     <footer style="bottom:0;left:0;position: absolute;"  id="aa">
       <a href="/home">ปิด</a>
