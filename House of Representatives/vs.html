@@ -92,11 +92,14 @@
     --bg-num: #efb956;
     --bg-text: #603917;
 }
-#flex{
-	display: flex;
-    right:25%;
-    position: fixed;
-    margin-bottom: 5rem; 
+#flex {
+    display: flex;
+    right: 25%;
+    position: sticky;
+    margin-bottom: 1rem;
+}
+.block:nth-child(1) {
+    margin-left: 200px;
 }
     </style>
 </head>
@@ -108,8 +111,10 @@
     <header><center><h3>ผลลงคะแนนเสียง</h3></center></header>
     <center class="mt-5"><h4>วันที่</h4><h4 id="day">25</h4><h4>เดือน</h4><h4 id="month">กรกฎาคม</h4><h4>พ.ศ.</h4><h4 id="year">2567</h4><h4>เวลา</h4><h4 id="time">08:38</h4></center>
     <br><br>
-    <div id="flex"><h2>จำนวนผู้เข้าประชุม</h2><textarea name="" id="np" cols="1" rows="1"></textarea></div>
-    <div id="flex"><h2>จำนวนผู้เข้าประชุม</h2><textarea name="" id="np" cols="1" rows="1"></textarea></div>
+	<div class="block">
+	    <div id="flex"><h2>จำนวนผู้เข้าประชุม</h2><textarea name="" id="np" cols="1" rows="1"></textarea></div>
+	    <div id="flex"><h2>จำนวนผู้เข้าประชุม</h2><textarea name="" id="np" cols="1" rows="1"></textarea></div>
+	</div>
     <center></center>
     
     <!-- JAVA SCRIPT -->
