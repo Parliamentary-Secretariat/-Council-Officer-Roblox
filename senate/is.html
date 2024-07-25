@@ -133,7 +133,7 @@
             fetch('https://script.google.com/macros/s/AKfycby_9A8B7AmNFwgrzjlH_HuUn2tW8hHnHTQZZpFsTgdMyaNhU9NovvDuY8g59EycRQ737w/exec?action=getUsers&sheet=สมาชิกวุฒิสภา')
                 .then(response => response.json())
                 .then(data => {
-                    const result = data.find(item => item['ลำดับ'] === 'ผลรวม');
+                    const result = data.find(item => item['ลำดับ'] === 'รวม สว');
                     if (result) {
                         document.getElementById('np').value = result['การแสดงตน'];
                     }
