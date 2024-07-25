@@ -126,10 +126,10 @@ div#flex:nth-child(5) {
     <br><br>
 	<div class="block">
 	    <div id="flex"><h2>จำนวนผู้ลงมติ</h2><textarea name="" id="np" cols="1" rows="1"></textarea></div>
-	    <div id="flex"><h2>เห็นด้วย</h2><textarea name="" id="" cols="1" rows="1"></textarea></div>
-	    <div id="flex"><h2>ไม่เห็นด้วย</h2><textarea name="" id="" cols="1" rows="1"></textarea></div>
-	    <div id="flex"><h2>งดออกเสียง</h2><textarea name="" id="" cols="1" rows="1"></textarea></div>
-	    <div id="flex"><h2>ไม่ลงคะแนนเสียง</h2><textarea name="" id="" cols="1" rows="1"></textarea></div>
+	    <div id="flex"><h2>เห็นด้วย</h2><textarea name="" id="ag" cols="1" rows="1"></textarea></div>
+	    <div id="flex"><h2>ไม่เห็นด้วย</h2><textarea name="" id="dag" cols="1" rows="1"></textarea></div>
+	    <div id="flex"><h2>งดออกเสียง</h2><textarea name="" id="nov" cols="1" rows="1"></textarea></div>
+	    <div id="flex"><h2>ไม่ลงคะแนนเสียง</h2><textarea name="" id="dnv" cols="1" rows="1"></textarea></div>
 	</div>
     <center></center>
     
@@ -166,6 +166,10 @@ div#flex:nth-child(5) {
                     const result = data.find(item => item['ลำดับ'] === 'รวม สส');
                     if (result) {
                         document.getElementById('np').value = result['การแสดงตน'];
+                        document.getElementById('ag').value = result['เห็นชอบ'];
+                        document.getElementById('dag').value = result['ไม่เห็นชอบ'];
+                        document.getElementById('nov').value = result['งดออกเสียง'];
+                        document.getElementById('dnv').value = result['ไม่ลงคะแนนเสียง'];
                     }
                 })
                 .catch(error => console.error('Error fetching data:', error));
