@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://media-private.canva.com/7cQ9s/MAFily7cQ9s/1/s.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20230715%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230715T131747Z&amp;X-Amz-Expires=67628&amp;X-Amz-Signature=b77bf0eeae064839993334ffd104147afe83bf3337c629118a4641c07419ad87&amp;X-Amz-SignedHeaders=host&amp;response-expires=Sun%2C%2016%20Jul%202023%2008%3A04%3A55%20GMT">
+    <title>ผลลงคะแนนเสียง</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        header{
+            background-color: var(--hd-col);
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Kanit', sans-serif;
+            font-weight: 500;
+	        background:white;
+        }
+        h3{
+            color: var(--hd-text);
+            margin: 0;
+            padding: 20px;
+            font-size: 24px;
+        }
+        h4{
+            color: var(--hd-col);
+            margin: 0;
+            padding-right: 15px;
+            font-size: 24px;
+            display: inline-flex;
+        }
+        center.mt-5{
+            margin-top: 5px;
+        }
+        bar{
+            background-color: #fff;
+            background: #fff;
+            display: inline-block;
+            max-height: 7px;
+            padding-left: 3px;
+            box-shadow: 10px  grey;
+        }
+        bar img,bar p{
+            display: inline-flex;
+            justify-content: center;
+            margin-bottom: 1px;
+        }
+        bar p{
+            font-size: 10px;
+            padding-left: 3px;
+            transform: translate(0,-3px);
+        }
+        h2 {
+          color: var(--hd-col);
+          font-size: 36px;
+          margin-bottom: 10px;
+          margin-block-start: 0.4em;
+          margin-block-end: 0;
+          padding-right: 28px;
+      }
+        
+        textarea {
+            font-size: 80px;
+            width: 10rem;
+            text-align: center;
+            border: transparent 1px solid;
+            font-weight: 700;
+            background-color: var(--bg-num);
+            height: 5rem;
+            overflow-y: hidden;
+            font-family: 'Roboto', sans-serif;
+        }
+        textarea::after{
+            border: transparent 1px solid;
+        }
+        textarea:hover{border: transparent 1px solid;}
+        
+:root{
+    /* --hd-col: #bf0000; */
+    --hd-col: #954000;
+    --hd-text: #fff; 
+    /* --bg-num: hwb(0 64% 0%); */
+    --bg-num: #efb956;
+    --bg-text: #603917;
+}
+#flex{
+	display: flex;
+    right:25%;
+    position: fixed;
+    margin-bottom: 5rem; 
+}
+    </style>
+</head>
+<body>
+    <bar>
+        <img src="https://i.ibb.co/cw9qQ7M/Seal-of-the-Parliament-of-Thailand-svg.png" alt="logo" height="10px" srcset="">
+        <p>ผลลงคะแนนเสียง</p>
+    </bar>
+    <header><center><h3>ผลลงคะแนนเสียง</h3></center></header>
+    <center class="mt-5"><h4>วันที่</h4><h4 id="day">25</h4><h4>เดือน</h4><h4 id="month">กรกฎาคม</h4><h4>พ.ศ.</h4><h4 id="year">2567</h4><h4>เวลา</h4><h4 id="time">08:38</h4></center>
+    <br><br>
+    <div id="flex"><h2>จำนวนผู้เข้าประชุม</h2><textarea name="" id="np" cols="1" rows="1"></textarea></div>
+    <div id="flex"><h2>จำนวนผู้เข้าประชุม</h2><textarea name="" id="np" cols="1" rows="1"></textarea></div>
+    <center></center>
+    
+    <!-- JAVA SCRIPT -->
+    <script>
+    const d = new Date();
+    document.getElementById("day").innerHTML = d.getDate(); 
+    const month = ["มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤษจิกายน","ธันวาคม"];
+    const e = new Date();
+    let name = month[e.getMonth()];
+    document.getElementById("month").innerHTML = name;
+        const f = new Date();
+        let x = f.getFullYear();
+        let y = 543;
+        let year = x+y;
+        document.getElementById("year").innerHTML = year;
+        function addZero(i) {
+          if (i < 10) {i = "0" + i}
+          return i;
+        }
+        
+        const g = new Date();
+        let h = addZero(g.getHours());
+        let m = addZero(g.getMinutes());
+        let time = h + ":" + m ;
+        document.getElementById("time").innerHTML = time;
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('https://script.google.com/macros/s/AKfycby_9A8B7AmNFwgrzjlH_HuUn2tW8hHnHTQZZpFsTgdMyaNhU9NovvDuY8g59EycRQ737w/exec?action=getUsers&sheet=สมาชิกสภาผู้แทนราษฎร')
+                .then(response => response.json())
+                .then(data => {
+                    const result = data.find(item => item['ลำดับ'] === 'รวม สส');
+                    if (result) {
+                        document.getElementById('np').value = result['การแสดงตน'];
+                    }
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        });
+    </script>
+    <footer style="bottom:0;left:0;position: absolute;" id="aa">
+      <a href="/House of Representatives">ปิด</a>
+      <a>แสดงตน</a>
+      <a>ลงมติ 1</a>
+    </footer>
+
+      <style>
+        footer a{
+          padding: 2px 8px;
+          margin-right: 5px;
+          background: #e8e8e8;
+          border-right: 3px solid #ccc;
+          font-size: 12px;
+          cursor: pointer;
+          text-decoration: none;
+          color: #000;
+        }
+        footer a:hover{
+          background: #f0eded;
+        }
+      </style>
+
+</body></html>
