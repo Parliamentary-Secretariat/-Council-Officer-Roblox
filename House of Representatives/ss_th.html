@@ -190,58 +190,6 @@ button, input, select, textarea {
 					<img src="https://hris.parliament.go.th/img/news-group_18.png" style="width:100%;height:6px;" alt="">
 				      <div class="row-fluid">
                         <div class="span12" id="user-list">
-                              <form id="seach" name="seach">  
-                                <div class="span12">
-                                    <select id="s_sapa" name="s_sapa" class="form-control" onchange="$('#seach').submit();">
-                                        <option value="84" selected="">สภาผู้แทนราษฎร</option><option value="24">สภาปฏิรูปแห่งชาติ</option><option value="81">สภาขับเคลื่อนการปฏิรูปประเทศ</option>                                    </select>
-                                </div>
-                            
-                            <div class="row-fluid">
-	
-								 <!--div class="span2" >
-                                    <ul class="nav nav-pills">
-                                        <li class="dropdown">
-                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">พรรค <b class="caret"></b></a>
-                                        <ul class="dropdown-menu filter">       
-                                                                                    <li id="filter-d3" onclick="GetS(this.id);"><a href="javascript:void(0)"  >พรรคกฎหมายและกระบวนการยุติธรรม</a></li>
-                                                                                    <li id="filter-d2" onclick="GetS(this.id);"><a href="javascript:void(0)"  >พรรคการบริหารราชการแผ่นดิน</a></li>
-                                                                                    <li id="filter-d4" onclick="GetS(this.id);"><a href="javascript:void(0)"  >พรรคการปกครองท้องถิ่น</a></li>
-                                                                                    <li id="filter-d1" onclick="GetS(this.id);"><a href="javascript:void(0)"  >พรรคการเมือง</a></li>
-                                                                                    <li id="filter-d5" onclick="GetS(this.id);"><a href="javascript:void(0)"  >พรรคการศึกษา</a></li>
-                                                                                    <li id="filter-d7" onclick="GetS(this.id);"><a href="javascript:void(0)"  >พรรคพลังงาน</a></li>
-                                                                                    <li id="filter-d6" onclick="GetS(this.id);"><a href="javascript:void(0)"  >พรรคเศรษฐกิจ</a></li>
-                                                                                    <li id="filter-d10" onclick="GetS(this.id);"><a href="javascript:void(0)"  >พรรคสังคม</a></li>
-                                                                                    <li id="filter-d8" onclick="GetS(this.id);"><a href="javascript:void(0)"  >พรรคสาธารณสุขและสิ่งแวดล้อม</a></li>
-                                                                                    <li id="filter-d9" onclick="GetS(this.id);"><a href="javascript:void(0)"  >พรรคสื่อสารมวลชน</a></li>
-                                                                                    <li id="filter-d11" onclick="GetS(this.id);"><a href="javascript:void(0)"  >พรรคอื่นๆ</a></li>
-                                                                                    <li id="filter-prov" onclick="GetS(this.id);"><a href="javascript:void(0)">จังหวัด</a></li>
-                                        </ul>
-                                        </li>                                        
-                                    </ul>
-                                </div-->
-								 
-                                <div class="input-append span3">
-                                 
-                                 <button type="button" class="btn btn-primary" onclick="document.location='ss_th1.php'" target="_blank">รายชื่ออดีตสมาชิก</button>    
-										
-                                </div>
-								 
-								  								
-                                <!--สปช-->
-                                                            </div>
-                            </form>
-<!--                             <ul class="list user_list">
-				<li class="th_p01">
-			            <span class="label label-info">เลขประจำตัวสมาชิก : <span id="num"></span></span>
-			            <span class="thumbnail pull-left" style="margin-right:10px;">
-			                <img id="img" src="" style="width:95px; height:55px;">
-			            </span>
-			            <h4><span id="name"></span>&nbsp;&nbsp;<span id="sname"></span></h4>
-			            <h4 id="description"></h4>
-			            <h4 id="party"></h4>
-			            <br><br><br><br>
-			        </li>
-                            </ul> -->
 				<ul id="members-list" class="list user_list"></ul>
 			    <script>
 			        document.addEventListener("DOMContentLoaded", function() {
