@@ -1,4 +1,30 @@
-        <div class="login_box" style="margin-top: -181.2px;">       
+/* HEAD */
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Load credentials.json
+        $.getJSON('credentials.json', function(credentials) {
+            $('#login_form').on('submit', function(event) {
+                event.preventDefault(); // Prevent the form from being submitted normally
+                const username = $('#username').val();
+                const password = $('#password').val();
+
+                // Check username and password against credentials
+                const user = credentials.find(user => user.username === username && user.password === password);
+
+                if (user) {
+                    window.location.href = 'home.html';
+                } else {
+                    alert('รหัสไม่ถูกต้อง');
+                }
+            });
+        })
+    });
+</script>
+
+/* BODY */
+	<div class="login_box" style="margin-top: -181.2px;">       
            <form id="login_form">
         <div class="top_b">
           <div><img src="https://hris.parliament.go.th/profile_service_ss/img/logo_login2.png"></div>
